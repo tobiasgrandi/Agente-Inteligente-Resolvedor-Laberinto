@@ -30,7 +30,7 @@ def agregar_bifurcaciones(laberinto, probabilidad_bifurcacion):
                         if 0 <= nx < filas and 0 <= ny < columnas and laberinto[nx, ny] == 1:
                             laberinto[nx, ny] = 0  # Crear apertura para una bifurcación
 
-def generar_laberinto_dificil(filas, columnas):
+def generar_laberinto(filas, columnas):
     laberinto = inicializar_laberinto(filas, columnas)
     # Empezar DFS desde una esquina para crear largos caminos
     dfs_generar_camino(laberinto, 1, 1)
@@ -44,16 +44,15 @@ def generar_laberinto_dificil(filas, columnas):
 
 def plot_laberinto(laberinto):
     plt.imshow(laberinto, cmap="Set3")
-    plt.xticks([]), plt.yticks([])  # Ocultar ejes para claridad
+    plt.xticks([]), plt.yticks([])
     plt.show()
 
-# Generar y mostrar un laberinto desafiante con inicio y meta
 filas, columnas = 23, 23  # Dimensiones impares para asegurar caminos
-laberinto_dificil = generar_laberinto_dificil(filas, columnas)
-plot_laberinto(laberinto_dificil)
+laberinto = generar_laberinto(filas, columnas)
+plot_laberinto(laberinto)
 
 # Configurar NumPy para que muestre la matriz completa
 np.set_printoptions(threshold=np.inf)
 
-# Mostrar la matriz del laberinto completa
-print(laberinto_dificil.tolist())
+# Mostrar la matriz del laberinto completa, para luego llevarla a estructura.py
+print(laberinto.tolist())
