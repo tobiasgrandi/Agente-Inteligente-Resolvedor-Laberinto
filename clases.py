@@ -132,27 +132,6 @@ class Metrica:
 
     def plot(self):
 
-
-        #fig, ax1 = plt.subplots()
-#
-        ## Plot de 'Tiempo' en el eje izquierdo
-        #ax1.set_xlabel('Epoch')
-        #ax1.set_ylabel('Tiempo', color='tab:blue')
-        #ax1.plot(self.tiempo['Epoch'], self.tiempo['Tiempo'], color='tab:blue', label='Tiempo')
-        #ax1.tick_params(axis='y', labelcolor='tab:blue')
-#
-        ## Crear un segundo eje y para 'Pared'
-        #ax2 = ax1.twinx()
-        #ax2.set_ylabel('Pared', color='tab:red')
-        #ax2.plot(self.pared['Epoch'], self.pared['Pared'], color='tab:red', label='Pared')
-        #ax2.tick_params(axis='y', labelcolor='tab:red')
-#
-        ## Mostrar la leyenda y el gráfico
-        #fig.tight_layout()
-        #plt.title('Tiempo y Pared por Epoch')
-        #plt.show()
-        # Figura para 'Tiempo'
-        # Crear una figura con 2 subgráficos (uno encima del otro)
         fig, (ax1, ax2) = plt.subplots(nrows=2, ncols=1, figsize=(8, 10))
 
         # Gráfico de 'Tiempo'
